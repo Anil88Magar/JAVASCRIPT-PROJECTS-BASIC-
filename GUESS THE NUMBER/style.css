@@ -1,0 +1,71 @@
+/* CSS for the Guess the Number Game */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container for the game */
+h1 {
+    font-size: 2em;
+    color: #4682b4;
+}
+
+/* Input field styling */
+#guessField {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #4682b4;
+    border-radius: 5px;
+    width: 10%;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #5a9bd5;
+}
+
+/* Styling the result message */
+#result {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #2e8b57;
+}
+
+/* Styling the attempts message */
+#attempts {
+    font-size: 1em;
+    color: #ff6347;
+}
+
+/* Restart button */
+#restartGame {
+    margin-top: 20px;
+    background-color: #ff6347;
+}
+
+#restartGame:hover {
+    background-color: #ff7f50;
+}
