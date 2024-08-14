@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Anil Magar</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let stop;
+      const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    
+
+      document.querySelector('#start').addEventListener('click',()=>{
+         stop = setInterval(()=>{
+document.querySelector('body').style.backgroundColor = getRandomColor();
+         },1000)
+      })
+
+      document.querySelector('#stop').addEventListener('click',()=>{
+         clearInterval((stop))
+      })
+    </script>
+</body>
+</html>
