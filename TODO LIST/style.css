@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  width: 100;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  padding: 20px;
+}
+
+.todo {
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto 20px;
+  background: #fff;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo,
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3a3a3a;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+#inputField {
+  flex: 1;
+  font-weight: 14px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background: transparent;
+}
+
+button {
+  padding: 16px 50px;
+  border: none;
+  outline: none;
+  background: #3a3a3a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px 50px;
+  position: relative;
+  color: #3a3a3a;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  border: 2px solid #050505;
+  left: 8px;
+  top: 6px;
+  cursor: pointer;
+}
+
+ul li.checked {
+  list-style-type: none; /* Hide the default bullet */
+  position: relative; /* For positioning the custom bullet */
+  padding-left: 25px; /* Add space for the custom bullet */
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "\2713"; /* Check mark symbol */
+  position: absolute; /* Position it before the text */
+  left: 0; /* Align it to the left of the list item */
+  top: 0;
+  color: white; /* Color of the check mark */
+  background-color: #3a3a3a; /* Your background color */
+  border-radius: 50%; /* If you want it to look circular */
+  width: 20px; /* Adjust the size */
+  height: 20px; /* Adjust the size */
+  display: flex; /* Center the check mark */
+  align-items: center; /* Vertically center the check mark */
+  justify-content: center; /* Horizontally center the check mark */
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+}
+
+ul li span:hover {
+  background: #edeef0;
+  border-radius: 50%;
+  cursor: pointer;
+}
