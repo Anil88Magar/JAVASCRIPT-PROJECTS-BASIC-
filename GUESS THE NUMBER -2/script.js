@@ -1,35 +1,41 @@
-const input = document.querySelector('.guess')
-const button = document.querySelector('.check')
-const message = document.querySelector('.message')
-const displayScore = document.querySelector('.score')
-const highScore = document.querySelector('.highScore')
-const randomNumber = parseInt(Math.random() *20 +1 );
+const checkBtn = document.querySelector(".btn-check");
+const message = document.querySelector(".message");
+const randomNumberMessage = document.querySelector(".number");
+const scoreMessage = document.querySelector(".score");
+const highScoreMessage = document.querySelector(".highscore");
+const againButton = document.querySelector(".again");
 
+let randomNumber = Math.floor(Math.random() * 20) + 1;
 let score = 20;
-button.addEventListener('click',(e)=>{
-    
-    const guess = parseInt(input.value);
-    if(isNaN(guess)){
-        message.innerHTML = 'Please enter a valid number.';
-        score -- ;
-        displayScore.textContent = score ;
-    }else if(guess > 20){
-         message.innerHTML = 'Please enter a number less than 20.';
-         score -- ;
-        displayScore.textContent = score ;
-    }else if(guess < 1){
-        message.innerHTML = 'Please enter a number greater than 1.'
-        score -- ;
-        displayScore.textContent = score ;
-    }else if (guess > randomNumber){
-        message.innerHTML =" Too low !";
-        score -- ;
-        displayScore.textContent = score ;
-    }else if(guess < randomNumber){
-        message.innerHTML = "Too High.";
-        score -- ;
-        displayScore.textContent = score ;
-    }else{
-        message.innerHTML = "Correct guess, You won !!"
+let highScore = 0;
+
+checkBtn.addEventListener("click", function () {
+  let guess = Number(document.querySelector(".guess").value);
+  if (guess < randomNumber) {
+    message.textContent = "Too low!";
+    score--;
+    scoreMessage.textContent = score;
+  } else if (guess > randomNumber) {
+    message.textContent = "Too high!";
+    score--;
+    scoreMessage.textContent = score;
+  } else if (guess === randomNumber) {
+    message.textContent = "Correct!";
+    document.body.style.backgroundColor = "#60b347";
+    randomNumberMessage.textContent = randomNumber;
+
+    if (score > highScore) {
+      highScore = score;
+      highScoreMessage.textContent = score;
     }
-})
+  }
+
+  if (score === 0) {
+    message.textContent = "You lost!";
+    checkBtn.disabled = true;
+  }
+});
+
+againButton.addEventListener("click", function () {
+  location.reload();
+});
