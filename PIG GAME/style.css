@@ -1,0 +1,58 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+  max-width: 900px;
+}
+
+.player {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.score {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.current {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.dice {
+  width: 100px;
+  display: block;
+  margin: 20px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.player--active {
+  background-color: #f8f8f8;
+}
+
+.player--winner {
+  background-color: lightgreen;
+}
